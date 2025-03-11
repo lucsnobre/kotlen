@@ -58,7 +58,7 @@ fun TelaInicial(navController: NavHostController?) {
             .background(
                 brush = Brush.horizontalGradient(
                     listOf(
-                        Color(0xFFA045E5), Color(0xFF590CFC)
+                        Color(0xff30A345), Color(0xff54C468)
                     )
                 )
             ), contentAlignment = Alignment.BottomCenter
@@ -69,7 +69,7 @@ fun TelaInicial(navController: NavHostController?) {
             verticalArrangement = Arrangement.SpaceBetween
         ) {
             Image(
-                painter = painterResource(id = R.drawable.logo),
+                painter = painterResource(id = R.drawable.haltere),
                 contentDescription = stringResource(R.string.logo_description),
                 modifier = Modifier.padding(top = 50.dp)
             )
@@ -114,7 +114,7 @@ fun TelaInicial(navController: NavHostController?) {
                                 Icon(
                                     imageVector = Icons.Default.AccountCircle,
                                     contentDescription = "",
-                                    tint = Color(0xFFA045E5)
+                                    tint = Color(0xff54C468)
                                 )
                             },
                             isError = erroState.value,

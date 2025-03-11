@@ -17,12 +17,16 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.FavoriteBorder
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -33,6 +37,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
@@ -62,7 +67,7 @@ fun UserDataScreen(modifier: Modifier = Modifier) {
             .background(
                 brush = Brush.horizontalGradient(
                     listOf(
-                        Color(0xFFA045E5), Color(0xFF590CFC)
+                        Color(0xFFA93838), Color(0xFF601521)
                     )
                 )
             )
@@ -108,7 +113,7 @@ fun UserDataScreen(modifier: Modifier = Modifier) {
                             border = BorderStroke(
                                 width = 2.dp, brush = Brush.horizontalGradient(
                                     listOf(
-                                        Color(0xFFA045E5), Color(0xFF590CFC)
+                                        Color(0xFFA93838), Color(0xFF601521)
                                     )
                                 )
                             )
@@ -128,7 +133,7 @@ fun UserDataScreen(modifier: Modifier = Modifier) {
                                 .fillMaxWidth()
                                 .padding(horizontal = 16.dp, vertical = 8.dp),
                             colors = ButtonDefaults.buttonColors(
-                                containerColor = Color(0xFF590CFC)
+                                containerColor = Color(0xFFA93838)
                             )
                         ) {
                             Text(stringResource(R.string.masculino))
@@ -144,7 +149,7 @@ fun UserDataScreen(modifier: Modifier = Modifier) {
                             border = BorderStroke(
                                 width = 2.dp, brush = Brush.horizontalGradient(
                                     listOf(
-                                        Color(0xFF590CFC), Color(0xFFA045E5)
+                                        Color(0xFF601521), Color(0xFFA93838)
                                     )
                                 )
                             )
@@ -164,7 +169,7 @@ fun UserDataScreen(modifier: Modifier = Modifier) {
                                 .fillMaxWidth()
                                 .padding(horizontal = 16.dp, vertical = 8.dp),
                             colors = ButtonDefaults.buttonColors(
-                                containerColor = Color(0xFFA045E5)
+                                containerColor = Color(0xFFA93838)
                             )
 
                         ) {
@@ -190,9 +195,9 @@ fun UserDataScreen(modifier: Modifier = Modifier) {
                         },
                         leadingIcon = {
                             Icon(
-                                imageVector = Icons.Default.Numbers,
+                                imageVector = Icons.Default.Star,
                                 contentDescription = "",
-                                tint = Color(0xFF590CFC)
+                                tint = Color(0xFF601521)
                             )
                         },
                         keyboardOptions = KeyboardOptions(
@@ -200,10 +205,10 @@ fun UserDataScreen(modifier: Modifier = Modifier) {
                             imeAction = ImeAction.Next
                         ),
                         colors = OutlinedTextFieldDefaults.colors(
-                            focusedBorderColor = Color(0xFF9C27B0),
-                            cursorColor = Color(0xFF9C27B0),
-                            focusedPlaceholderColor = Color(0xFF9C27B0),
-                            unfocusedBorderColor = Color(0xFF673AB7)
+                            focusedBorderColor = Color(0xFF601521),
+                            cursorColor = Color(0xFFA93838),
+                            focusedPlaceholderColor = Color(0xFFA93838),
+                            unfocusedBorderColor = Color(0xFF601521)
                         ),
                         textStyle = TextStyle(
                             fontSize = 24.sp
@@ -224,9 +229,9 @@ fun UserDataScreen(modifier: Modifier = Modifier) {
                         },
                         leadingIcon = {
                             Icon(
-                                imageVector = Icons.Default.Balance,
+                                imageVector = Icons.Default.FavoriteBorder,
                                 contentDescription = "",
-                                tint = Color(0xFF590CFC)
+                                tint = Color(0xFF601521)
                             )
                         },
                         keyboardOptions = KeyboardOptions(
@@ -234,10 +239,10 @@ fun UserDataScreen(modifier: Modifier = Modifier) {
                             imeAction = ImeAction.Next
                         ),
                         colors = OutlinedTextFieldDefaults.colors(
-                            focusedBorderColor = Color(0xFF9C27B0),
-                            cursorColor = Color(0xFF9C27B0),
-                            focusedPlaceholderColor = Color(0xFF9C27B0),
-                            unfocusedBorderColor = Color(0xFF673AB7)
+                            focusedBorderColor = Color(0xFFCB5050),
+                            cursorColor = Color(0xFFCB5050),
+                            focusedPlaceholderColor = Color(0xFFCB5050),
+                            unfocusedBorderColor = Color(0xFFCB2727)
                         ),
                         textStyle = TextStyle(
                             fontSize = 24.sp
@@ -257,9 +262,9 @@ fun UserDataScreen(modifier: Modifier = Modifier) {
                         },
                         leadingIcon = {
                             Icon(
-                                imageVector = Icons.Default.Height,
+                                imageVector = Icons.Default.Warning,
                                 contentDescription = "",
-                                tint = Color(0xFF590CFC)
+                                tint = Color(0xFF601521)
                             )
                         },
                         keyboardOptions = KeyboardOptions(
@@ -267,10 +272,10 @@ fun UserDataScreen(modifier: Modifier = Modifier) {
                             imeAction = ImeAction.Done
                         ),
                         colors = OutlinedTextFieldDefaults.colors(
-                            focusedBorderColor = Color(0xFF9C27B0),
-                            cursorColor = Color(0xFF9C27B0),
-                            focusedPlaceholderColor = Color(0xFF9C27B0),
-                            unfocusedBorderColor = Color(0xFF673AB7)
+                            focusedBorderColor = Color(0xFFCB5050),
+                            cursorColor = Color(0xFFCB5050),
+                            focusedPlaceholderColor = Color(0xFFCB5050),
+                            unfocusedBorderColor = Color(0xFFCB2727)
                         ),
                         textStyle = TextStyle(
                             fontSize = 24.sp
@@ -286,7 +291,7 @@ fun UserDataScreen(modifier: Modifier = Modifier) {
                         .fillMaxWidth()
                         .height(48.dp),
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = Color(0xFF590CFC)
+                        containerColor = Color(0xFF601521)
                     )
                 ) {
                     Text(text = stringResource(R.string.calculate))
