@@ -114,7 +114,7 @@ fun UserDataScreen(modifier: Modifier = Modifier) {
                             )
                         ) {
                             Image(
-                                painter = painterResource(id = R.drawable.man),
+                                painter = painterResource(id = R.drawable.profile),
                                 contentDescription = stringResource(R.string.descMasc),
                                 modifier = Modifier
                                     .size(100.dp)
