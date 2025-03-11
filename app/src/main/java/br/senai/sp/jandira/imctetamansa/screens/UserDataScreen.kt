@@ -17,7 +17,10 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Balance
 import androidx.compose.material.icons.filled.FavoriteBorder
+import androidx.compose.material.icons.filled.Height
+import androidx.compose.material.icons.filled.Numbers
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Button
@@ -195,7 +198,7 @@ fun UserDataScreen(modifier: Modifier = Modifier) {
                         },
                         leadingIcon = {
                             Icon(
-                                imageVector = Icons.Default.Star,
+                                imageVector = Icons.Default.Numbers,
                                 contentDescription = "",
                                 tint = Color(0xFF601521)
                             )
@@ -229,7 +232,7 @@ fun UserDataScreen(modifier: Modifier = Modifier) {
                         },
                         leadingIcon = {
                             Icon(
-                                imageVector = Icons.Default.FavoriteBorder,
+                                imageVector = Icons.Default.Balance,
                                 contentDescription = "",
                                 tint = Color(0xFF601521)
                             )
@@ -262,7 +265,7 @@ fun UserDataScreen(modifier: Modifier = Modifier) {
                         },
                         leadingIcon = {
                             Icon(
-                                imageVector = Icons.Default.Warning,
+                                imageVector = Icons.Default.Height,
                                 contentDescription = "",
                                 tint = Color(0xFF601521)
                             )
