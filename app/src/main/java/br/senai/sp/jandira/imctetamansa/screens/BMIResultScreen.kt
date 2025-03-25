@@ -59,8 +59,8 @@ fun BMIResultScreen(navController: NavHostController?) {
             .background(
                 brush = Brush.linearGradient(
                     listOf(
-                        Color(color = 0xFFEF9106),
-                        Color(color = 0xFFB6170C)
+                        Color(color = 0xFF82E04C),
+                        Color(color = 0xFF669126)
                     )
                 )
             ),
@@ -226,7 +226,7 @@ fun BMIResultScreen(navController: NavHostController?) {
                             .padding(horizontal = 16.dp)
                             .height(50.dp),
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = Color(color = 0xFFEF9106)
+                            containerColor = Color(color = 0xFF669126)
                         )
                     ) {
                         Text(

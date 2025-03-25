@@ -1,4 +1,4 @@
-package br.senai.sp.jandira.bmi.screens
+package br.senai.sp.jandira.imctetamansa.screens
 
 import android.content.Context
 import androidx.compose.foundation.BorderStroke
@@ -81,8 +81,8 @@ fun UserDataScreen(navController: NavHostController?) {
             .background(
                 brush = Brush.linearGradient(
                     listOf(
-                        Color(color = 0xFFEF9106),
-                        Color(color = 0xFFB6170C)
+                        Color(color = 0xFF82E04C),
+                        Color(color = 0xFF669126)
                     )
                 )
             ),
@@ -135,7 +135,7 @@ fun UserDataScreen(navController: NavHostController?) {
                                 modifier = Modifier
                                     .size(100.dp),
                                 shape = CircleShape,
-                                border = BorderStroke(1.dp, Color(color = 0xFFEF9106)),
+                                border = BorderStroke(1.dp, Color(color = 0xFF5E8BBE)),
                                 elevation = CardDefaults.cardElevation(2.dp)
                             )
                             {
@@ -209,7 +209,7 @@ fun UserDataScreen(navController: NavHostController?) {
                                 Icon(
                                     imageVector = Icons.Default.AssistWalker,
                                     contentDescription = "",
-                                    tint = Color(color = 0xFFEF9106)
+                                    tint = Color(color = 0xFF82E04C)
                                 )
                             },
                             keyboardOptions = KeyboardOptions(
@@ -236,7 +236,7 @@ fun UserDataScreen(navController: NavHostController?) {
                                 Icon(
                                     imageVector = Icons.Default.Balance,
                                     contentDescription = "",
-                                    tint = Color(color = 0xFFEF9106)
+                                    tint = Color(color = 0xFF82E04C)
                                 )
                             },
                             keyboardOptions = KeyboardOptions(
@@ -244,8 +244,8 @@ fun UserDataScreen(navController: NavHostController?) {
                                 imeAction = ImeAction.Next
                             ),
                             colors = OutlinedTextFieldDefaults.colors(
-                                focusedBorderColor = Color(color = 0xFFEF9106),
-                                cursorColor = Color(color = 0xFFEF9106)
+                                focusedBorderColor = Color(color = 0xFF82E04C),
+                                cursorColor = Color(color = 0xFF82E04C)
                             ),
                             textStyle = TextStyle(fontSize = 24.sp)
                         )
@@ -262,7 +262,7 @@ fun UserDataScreen(navController: NavHostController?) {
                                 Icon(
                                     imageVector = Icons.Default.Height,
                                     contentDescription = "",
-                                    tint = Color(color = 0xFFEF9106)
+                                    tint = Color(color = 0xFF82E04C)
                                 )
                             },
                             keyboardOptions = KeyboardOptions(
@@ -270,8 +270,8 @@ fun UserDataScreen(navController: NavHostController?) {
                                 imeAction = ImeAction.Done
                             ),
                             colors = OutlinedTextFieldDefaults.colors(
-                                focusedBorderColor = Color(color = 0xFFEF9106),
-                                cursorColor = Color(color = 0xFFEF9106)
+                                focusedBorderColor = Color(color = 0xFF82E04C),
+                                cursorColor = Color(color = 0xFF82E04C)
                             ),
                             textStyle = TextStyle(fontSize = 24.sp)
                         )
@@ -290,7 +290,7 @@ fun UserDataScreen(navController: NavHostController?) {
                             .padding(horizontal = 16.dp)
                             .height(50.dp),
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = Color(color = 0xFFEF9106)
+                            containerColor = Color(color = 0xFF669126)
                         )
                     ) {
                         Text(modifier = Modifier

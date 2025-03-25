@@ -67,8 +67,8 @@ fun TelaInicial(navController: NavHostController?) {
             .background(
                 brush = Brush.linearGradient(
                     listOf(
-                        Color(0xFFEF9106),
-                        Color(0xFFB6170C)
+                        Color(0xFF82E04C),
+                        Color(0xFF669126)
                     )
                 )
             ),
@@ -133,7 +133,7 @@ fun TelaInicial(navController: NavHostController?) {
                                 Icon(
                                     imageVector =  Icons.Default.AccountBox,
                                     contentDescription = "",
-                                    tint = Color(0xFFFF5722)
+                                    tint = Color(0xFF383131)
                                 )
                             },
                             keyboardOptions = KeyboardOptions(
