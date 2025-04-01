@@ -70,6 +70,21 @@ fun UserDataScreen(
         mutableStateOf(value = "")
     }
 
+    val selectedColorState = remember {
+        mutableStateOf(Color(0xFF9C27B0))
+    }
+
+    val unselectedColorState = remember {
+        mutableStateOf(Color.LightGray)
+    }
+
+    val isMaleClicked = remember {
+        mutableStateOf(false)
+    }
+
+    val isFemaleClicked = remember {
+        mutableStateOf(false)
+    }
 
     val isErrorStateInputAge = remember {
         mutableStateOf(value = false)
@@ -195,7 +210,7 @@ fun UserDataScreen(
                                         )
                                     )),
                                 elevation = ButtonDefaults.buttonElevation(5.dp),
-                                colors = ButtonDefaults.buttonColors(Color(0xFF5608A4))
+                                colors = ButtonDefaults.buttonColors(containerColor = if (isMaleClicked.value) selectedColorState.value else unselectedColorState.value)
                             ) {
                                 Text(
                                     text = stringResource(R.string.buttonMale)
@@ -243,7 +258,7 @@ fun UserDataScreen(
                                         )
                                     )),
                                 elevation = ButtonDefaults.buttonElevation(5.dp),
-                                colors = ButtonDefaults.buttonColors(Color(0xFF5608A4))
+                                colors = ButtonDefaults.buttonColors(containerColor = if (isFemaleClicked.value) selectedColorState.value else unselectedColorState.value)
                             ){
                                 Text(
                                     text = stringResource(R.string.buttonFemale)
