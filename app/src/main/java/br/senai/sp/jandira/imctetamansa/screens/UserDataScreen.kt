@@ -21,6 +21,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AssistWalker
 import androidx.compose.material.icons.filled.Balance
 import androidx.compose.material.icons.filled.Height
+import androidx.compose.material.icons.filled.Numbers
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.ButtonDefaults
@@ -55,161 +56,224 @@ import androidx.navigation.NavHostController
 import br.senai.sp.jandira.imctetamansa.R
 
 @Composable
-fun UserDataScreen(navController: NavHostController?) {
-
-    var nomeAge = remember {
+fun UserDataScreen(
+    navController: NavHostController?
+) {
+    val context = LocalContext.current
+    val ageState = remember {
+        mutableStateOf(value = "")
+    }
+    val weightState = remember {
+        mutableStateOf(value = "")
+    }
+    val heightState = remember {
         mutableStateOf(value = "")
     }
 
-    var nomeWeight = remember {
+
+    val isErrorStateInputAge = remember {
+        mutableStateOf(value = false)
+    }
+    val erroMessageStateAge = remember {
         mutableStateOf(value = "")
     }
 
-    var nomeHeight = remember {
+    val isErrorStateInputWeight = remember {
+        mutableStateOf(value = false)
+    }
+    val erroMessageStateWeight = remember {
         mutableStateOf(value = "")
     }
 
-    // Abrir o arquivo usuario.xml para recuperar o nome que o usuario digitou na tela anterior
-    var context = LocalContext.current
-    var sharedUserFile = context
-        .getSharedPreferences("usuarios",Context.MODE_PRIVATE)
-    val userName = sharedUserFile.getString("user_name","Name not found!")
+    val isErrorStateInputHeight = remember {
+        mutableStateOf(value = false)
+    }
+    val erroMessageStateHeight = remember {
+        mutableStateOf(value = "")
+    }
 
+    // Abre o arquivo usuario.xml
+    // E pega seus dados
+    val sharedUserFile = context
+        .getSharedPreferences(
+            "user",
+            Context.MODE_PRIVATE
+        )
+
+    val editor = sharedUserFile.edit()
+
+
+    val userName = sharedUserFile.getString(
+        "user_name",
+        "Name not found!"
+    )
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(
                 brush = Brush.linearGradient(
                     listOf(
-                        Color(color = 0xFF82E04C),
-                        Color(color = 0xFF669126)
+                        Color(0xFF5608A4),
+                        Color(0xFFBA88FF)
                     )
                 )
-            ),
-        contentAlignment = Alignment.BottomCenter
+            )
     ) {
-        Column {
-            Row(
+        Column (
+            modifier = Modifier
+                .fillMaxSize(),
+            verticalArrangement = Arrangement.Bottom
+        ){
+
+            Text(
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(10.dp),
+                text = stringResource(R.string.titleHi) + " $userName!",
+                fontSize = 48.sp,
+                color = Color.White,
+
+                )
+            Card (
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(15.dp)
-                    .weight(1f),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = stringResource(R.string.hi) + " $userName!",
-                    color = Color.White,
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 25.sp
-                )
-            }
-            Card(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .weight(5f),
-                shape = RoundedCornerShape(
-                    topStart = 32.dp,
-                    topEnd = 32.dp
-                ),
-                colors = CardDefaults.cardColors(
-                    containerColor = Color.White
-                )
-            ) {
-                Column(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(16.dp),
-                    verticalArrangement = Arrangement.SpaceEvenly
-                ) {
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
+                    .weight(9f)
+                    .padding(0.dp, 32.dp, 0.dp, 0.dp),
+                colors = CardDefaults.cardColors(Color(0xFFffffff)),
+                shape = RoundedCornerShape(48.dp, 48.dp)
 
-                    ) {
-                        Column(
+            ){
+                Column (
+                    modifier = Modifier
+                        .padding(32.dp)
+                        .weight(1f),
+                    verticalArrangement = Arrangement.SpaceAround
+                ){
+                    Row (
+                        modifier = Modifier
+                            .padding(0.dp, 10.dp),
+                    ){
+                        Column (
                             modifier = Modifier
                                 .weight(1f),
                             horizontalAlignment = Alignment.CenterHorizontally
-                        ) {
-                            Card(
+                        ){
+                            Card (
                                 modifier = Modifier
-                                    .size(100.dp),
+                                    .size(130.dp),
                                 shape = CircleShape,
-                                border = BorderStroke(1.dp, Color(color = 0xFF5E8BBE)),
-                                elevation = CardDefaults.cardElevation(2.dp)
-                            )
-                            {
+                                border = BorderStroke(
+                                    2.dp,
+                                    brush = Brush.linearGradient(
+                                        listOf(
+                                            Color(0xFF5608A4),
+                                            Color(0xFFBA88FF)
+                                        )
+                                    )),
+                                elevation = CardDefaults.elevatedCardElevation(5.dp)
+                            ){
                                 Image(
                                     painter = painterResource(id = R.drawable.profile),
-                                    contentDescription = stringResource(R.string.male),
+                                    contentDescription = stringResource(R.string.logo_description),
                                     modifier = Modifier
-                                        .padding(1.dp)
+                                        .padding(top = 32.dp)
+                                        .fillMaxSize()
+
                                 )
                             }
                             Button(
                                 onClick = {},
                                 modifier = Modifier
                                     .fillMaxWidth()
-                                    .padding(horizontal = 16.dp, vertical = 4.dp),
-                                colors = ButtonDefaults.buttonColors(
-                                    containerColor = Color(color = 0xFF03A9F4)
-                                )
+                                    .padding(10.dp, 5.dp),
+                                border = BorderStroke(
+                                    1.dp,
+                                    brush = Brush.linearGradient(
+                                        listOf(
+                                            Color(0xFF5608A4),
+                                            Color(0xFFBA88FF)
+                                        )
+                                    )),
+                                elevation = ButtonDefaults.buttonElevation(5.dp),
+                                colors = ButtonDefaults.buttonColors(Color(0xFF5608A4))
                             ) {
-                                Text(text = stringResource(R.string.male))
+                                Text(
+                                    text = stringResource(R.string.buttonMale)
+                                )
                             }
                         }
-                        Column(
+                        Column (
                             modifier = Modifier
                                 .weight(1f),
                             horizontalAlignment = Alignment.CenterHorizontally
-                        ) {
-                            Card(
+                        ){
+                            Card (
                                 modifier = Modifier
-                                    .size(100.dp),
+                                    .size(130.dp),
                                 shape = CircleShape,
-                                border = BorderStroke(1.dp, Color(color = 0xFFEF9106)),
-                                elevation = CardDefaults.cardElevation(2.dp)
-                            )
-                            {
+                                border = BorderStroke(
+                                    2.dp,
+                                    brush = Brush.linearGradient(
+                                        listOf(
+                                            Color(0xFF5608A4),
+                                            Color(0xFFBA88FF)
+                                        )
+                                    )),
+                                elevation = CardDefaults.elevatedCardElevation(5.dp)
+                            ){
                                 Image(
                                     painter = painterResource(id = R.drawable.woman),
-                                    contentDescription = stringResource(R.string.female),
+                                    contentDescription = stringResource(R.string.logo_description),
                                     modifier = Modifier
-                                        .padding(1.dp)
+                                        .padding(top = 32.dp)
+                                        .fillMaxSize()
                                 )
                             }
                             Button(
                                 onClick = {},
                                 modifier = Modifier
                                     .fillMaxWidth()
-                                    .padding(horizontal = 16.dp, vertical = 4.dp),
-                                colors = ButtonDefaults.buttonColors(
-                                    containerColor = Color(color = 0xFFE91E63)
+                                    .padding(10.dp, 5.dp),
+                                border = BorderStroke(
+                                    1.dp,
+                                    brush = Brush.linearGradient(
+                                        listOf(
+                                            Color(0xFF5608A4),
+                                            Color(0xFFBA88FF)
+                                        )
+                                    )),
+                                elevation = ButtonDefaults.buttonElevation(5.dp),
+                                colors = ButtonDefaults.buttonColors(Color(0xFF5608A4))
+                            ){
+                                Text(
+                                    text = stringResource(R.string.buttonFemale)
                                 )
-                            ) {
-                                Text(text = stringResource(R.string.female))
                             }
                         }
                     }
-                    Column(
+                    Column (
                         modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(16.dp)
-                    ) {
+                            .padding(0.dp, 10.dp),
+                        verticalArrangement = Arrangement.SpaceBetween
+                    ){
                         OutlinedTextField(
-                            value = nomeAge.value,
-                            onValueChange = {nome ->
-                                nomeAge.value = nome
+                            value = ageState.value,
+                            onValueChange = {
+                                ageState.value = it
                             },
                             modifier = Modifier
                                 .fillMaxWidth(),
                             shape = RoundedCornerShape(16.dp),
-                            label = { Text(text = stringResource(R.string.age)) },
+                            label = {
+                                Text(
+                                    text = stringResource(R.string.Age)
+                                )
+                            },
                             leadingIcon = {
                                 Icon(
-                                    imageVector = Icons.Default.AssistWalker,
+                                    imageVector = Icons.Default.Numbers,
                                     contentDescription = "",
-                                    tint = Color(color = 0xFF82E04C)
+                                    tint = Color(0xFF5608A4)
                                 )
                             },
                             keyboardOptions = KeyboardOptions(
@@ -217,26 +281,36 @@ fun UserDataScreen(navController: NavHostController?) {
                                 imeAction = ImeAction.Next
                             ),
                             colors = OutlinedTextFieldDefaults.colors(
-                                focusedBorderColor = Color(color = 0xFFEF9106),
-                                cursorColor = Color(color = 0xFFEF9106)
+                                unfocusedLabelColor = Color(0xFFBA88FF),
+                                cursorColor = Color(0xFFBA88FF)
                             ),
-                            textStyle = TextStyle(fontSize = 24.sp)
+                            isError = isErrorStateInputAge.value,
+                            supportingText = {
+                                Text(
+                                    text = erroMessageStateAge.value,
+                                    color = Color.Red
+                                )
+                            }
                         )
                         OutlinedTextField(
-                            value = nomeWeight.value,
-                            onValueChange = {nome ->
-                                nomeWeight.value = nome
+                            value = weightState.value,
+                            onValueChange = {
+                                weightState.value = it
                             },
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .padding(vertical = 12.dp),
+                                .padding(0.dp, 30.dp),
                             shape = RoundedCornerShape(16.dp),
-                            label = { Text(text = stringResource(R.string.weight)) },
+                            label = {
+                                Text(
+                                    text = stringResource(R.string.Weight)
+                                )
+                            },
                             leadingIcon = {
                                 Icon(
                                     imageVector = Icons.Default.Balance,
                                     contentDescription = "",
-                                    tint = Color(color = 0xFF82E04C)
+                                    tint = Color(0xFF5608A4)
                                 )
                             },
                             keyboardOptions = KeyboardOptions(
@@ -244,25 +318,35 @@ fun UserDataScreen(navController: NavHostController?) {
                                 imeAction = ImeAction.Next
                             ),
                             colors = OutlinedTextFieldDefaults.colors(
-                                focusedBorderColor = Color(color = 0xFF82E04C),
-                                cursorColor = Color(color = 0xFF82E04C)
+                                unfocusedLabelColor = Color(0xFFBA88FF),
+                                cursorColor = Color(0xFFBA88FF)
                             ),
-                            textStyle = TextStyle(fontSize = 24.sp)
+                            isError = isErrorStateInputWeight.value,
+                            supportingText = {
+                                Text(
+                                    text = erroMessageStateWeight.value,
+                                    color = Color.Red
+                                )
+                            }
                         )
                         OutlinedTextField(
-                            value = nomeHeight.value,
-                            onValueChange = {nome ->
-                                nomeHeight.value = nome
+                            value = heightState.value,
+                            onValueChange = {
+                                heightState.value = it
                             },
                             modifier = Modifier
                                 .fillMaxWidth(),
                             shape = RoundedCornerShape(16.dp),
-                            label = { Text(text = stringResource(R.string.height)) },
+                            label = {
+                                Text(
+                                    text = stringResource(R.string.Height)
+                                )
+                            },
                             leadingIcon = {
                                 Icon(
                                     imageVector = Icons.Default.Height,
                                     contentDescription = "",
-                                    tint = Color(color = 0xFF82E04C)
+                                    tint = Color(0xFF5608A4)
                                 )
                             },
                             keyboardOptions = KeyboardOptions(
@@ -270,47 +354,90 @@ fun UserDataScreen(navController: NavHostController?) {
                                 imeAction = ImeAction.Done
                             ),
                             colors = OutlinedTextFieldDefaults.colors(
-                                focusedBorderColor = Color(color = 0xFF82E04C),
-                                cursorColor = Color(color = 0xFF82E04C)
+                                cursorColor = Color(0xFFBA88FF),
+                                unfocusedLabelColor = Color(0xFFBA88FF)
                             ),
-                            textStyle = TextStyle(fontSize = 24.sp)
+                            isError = isErrorStateInputHeight.value,
+                            supportingText = {
+                                Text(
+                                    text = erroMessageStateHeight.value,
+                                    color = Color.Red
+                                )
+                            }
                         )
                     }
+
                     Button(
                         onClick = {
-                            val editor = sharedUserFile.edit()
-                            editor.putInt("user_age",nomeAge.value.trim().toInt())
-                            editor.putInt("user_weight",nomeWeight.value.trim().toInt())
-                            editor.putInt("user_height",nomeHeight.value.trim().toInt())
-                            editor.apply()
-                            navController?.navigate(
-                                route = "result_screen"
-                            )},
-                        modifier = Modifier
-                            .padding(horizontal = 16.dp)
-                            .height(50.dp),
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = Color(color = 0xFF669126)
-                        )
-                    ) {
-                        Text(modifier = Modifier
-                            .fillMaxWidth(),
-                            textAlign = TextAlign.Center,
-                            text = stringResource(R.string.calculate),
-                            fontWeight = FontWeight.Bold,
-                            fontSize = 25.sp
-                        )
+                            if (ageState.value.length == 0){
+                                isErrorStateInputAge.value = true
+                                erroMessageStateAge.value = context.getString(R.string.supportEmptyField)
 
+                            }else if(weightState.value.length == 0){
+                                isErrorStateInputWeight.value = true
+                                erroMessageStateWeight.value = context.getString(R.string.supportEmptyField)
+
+                            }else if(heightState.value.length == 0){
+                                isErrorStateInputHeight.value = true
+                                erroMessageStateHeight.value = context.getString(R.string.supportEmptyField)
+
+                            }else if (ageState.value.toIntOrNull() == null){
+                                isErrorStateInputAge.value = true
+                                erroMessageStateAge.value = context.getString(R.string.supportTextFieldForInt)
+
+                            }else if(weightState.value.toIntOrNull() == null){
+                                isErrorStateInputWeight.value = true
+                                erroMessageStateWeight.value = context.getString(R.string.supportTextFieldForInt)
+
+                            }else if(heightState.value.toIntOrNull() == null){
+                                isErrorStateInputHeight.value = true
+                                erroMessageStateHeight.value = context.getString(R.string.supportTextFieldForInt)
+
+                            }else{
+                                isErrorStateInputAge.value = false
+                                isErrorStateInputWeight.value = false
+                                isErrorStateInputHeight.value = false
+
+
+
+
+                                editor.putInt("user_age", ageState.value.trim().toInt())
+                                editor.putInt("user_weight", weightState.value.trim().toInt())
+                                editor.putInt("user_height", heightState.value.trim().toInt())
+                                editor.apply()
+
+                                navController?.navigate("result_screen")
+                            }
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        border = BorderStroke(
+                            1.dp,
+                            brush = Brush.linearGradient(
+                                listOf(
+                                    Color(0xFF5608A4),
+                                    Color(0xFFBA88FF)
+                                )
+                            )),
+                        elevation = ButtonDefaults.buttonElevation(5.dp),
+                        colors = ButtonDefaults.buttonColors(Color(0xFF5608A4)),
+                        shape = RoundedCornerShape(10.dp)
+                    )  {
+                        Text(
+                            text = stringResource(R.string.buttonCalculate),
+                            fontSize = 28.sp,
+                        )
                     }
+
+
                 }
             }
         }
     }
 }
 
-
 @Preview(showSystemUi = true)
 @Composable
 private fun UserDataScreenPreview() {
-    UserDataScreen(navController = null)
+    UserDataScreen(null)
 }

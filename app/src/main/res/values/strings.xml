@@ -1,24 +1,40 @@
 <resources>
     <string name="app_name">BMI</string>
-    <string name="logo_description">Logo description</string>
-    <string name="welcome">Welcome</string>
-    <string name="your_name">What\'s your name?</string>
+    <string name="logo_description">App logo, a calendar with an alter on the right side</string>
+    <string name="welcome">Bem-vindo!</string>
+    <string name="what">What\'s your name</string>
+    <string name="whatname">Seu nome</string>
     <string name="next">Next</string>
-    <string name="name_here">Your name heres</string>
-    <string name="hi">Hi</string>
-    <string name="male">Male</string>
-    <string name="female">Female</string>
-    <string name="age">Age</string>
-    <string name="weight">Weight</string>
-    <string name="height">Height</string>
-    <string name="calculate">Calculate</string>
-    <string name="support_name">The name is required!</string>
-    <string name="your_bmi_result">Your BMI Result</string>
-    <string name="bmi_value">30,6</string>
-    <string name="class_bmi">You have Class I Obesity</string>
-    <string name="age_number">50</string>
-    <string name="weight_value">97 Kg</string>
-    <string name="high">High</string>
-    <string name="high_value">178 cm</string>
-    <string name="new_calculate">New Calc</string>
+    <string name="support_name">The name is mandatory and must have 3 or more letters.</string>
+
+    <string name="titleHi">Hi</string>
+    <string name="buttonMale">Male</string>
+    <string name="buttonFemale">Female</string>
+    <string name="Age">Age</string>
+    <string name="Weight">Weight</string>
+    <string name="Height">Height</string>
+    <string name="buttonCalculate">Calculate</string>
+    <string name="supportEmptyField">The field is mandatory</string>
+    <string name="supportTextFieldForInt">The field only receives integers</string>
+
+    <string name="titleYourBMIResult">Your BMI Result</string>
+    <string name="YouHaveClassIObesity">You have Class I Obesity.</string>
+    <string name="buttonNewCalc">New Calc</string>
+    <string name="exampleNumber">0</string>
+
+    <string name="under_weight">Underweight</string>
+    <string name="normal_weight">Normal weight</string>
+    <string name="over_weight">Slightly overweight</string>
+    <string name="class1_weight">Class 1 obesity</string>
+    <string name="class2_weight">Class 2 obesity</string>
+    <string name="class3_weight">Class 3 obesity</string>
+
+    <string name="under_weight_table">Underweight</string>
+    <string name="normal_weight_table">Normal weight</string>
+    <string name="over_weigh_tablet">Overweight</string>
+    <string name="class1_weight_table">Class 1 obesity</string>
+    <string name="class2_weight_table">Class 2 obesity</string>
+    <string name="class3_weight_table">Class 3 obesity</string>
+
+
 </resources>

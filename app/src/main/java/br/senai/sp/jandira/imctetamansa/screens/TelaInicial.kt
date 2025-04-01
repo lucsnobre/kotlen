@@ -48,6 +48,8 @@ fun TelaInicial(navController: NavHostController?) {
         mutableStateOf(value = "")
     }
 
+
+
     var isErrorStatus = remember {
         mutableStateOf(value = false)
     }
@@ -59,6 +61,14 @@ fun TelaInicial(navController: NavHostController?) {
     // Variavel que guarda o contexto que estamos
     var context = LocalContext.current
 
+    //Abrir ou criar um arquivo SharedPreferences
+    val userFile = context
+        .getSharedPreferences(
+            "user_file", Context.MODE_PRIVATE
+        )
+
+    //Criamos um editor responsável por editar o arquivo
+    val editor = userFile.edit()
 
 
     Box(
@@ -114,10 +124,10 @@ fun TelaInicial(navController: NavHostController?) {
                 ) {
                     Column {
                         Text(
-                            text = stringResource(R.string.your_name),
+                            text = stringResource(R.string.whatname),
                             fontSize = 22.sp,
                             color = Color.Black,
-                            fontFamily = FontFamily.Monospace
+
                         )
                         OutlinedTextField(
                             value = nomeState.value,
@@ -151,6 +161,7 @@ fun TelaInicial(navController: NavHostController?) {
                     }
                     Button(
                         onClick = {
+
                             if(nomeState.value.length < 3){
                                 isErrorStatus.value = true
                                 errorMessageState.value = context.getString(R.string.support_name)
