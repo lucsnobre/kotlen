@@ -67,8 +67,8 @@ import java.util.Locale
 fun BmiLevel(
     markColor: Color = Color.Red,
     isFilled: Boolean = false,
-    text1: String = "",
-    text2: String = "",
+    textRight: String = "",
+    textLeft: String = "",
 ) {
 
     Row(
@@ -108,12 +108,12 @@ fun BmiLevel(
                     .fillMaxSize()
             ){
                 Text(
-                    text = text1,
+                    text = textRight,
                     modifier = Modifier
                         .padding(start = 8.dp)
                 )
                 Text(
-                    text = text2,
+                    text = textLeft,
                     modifier = Modifier
                         .padding(end = 8.dp)
                 )

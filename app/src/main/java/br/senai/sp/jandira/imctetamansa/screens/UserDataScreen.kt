@@ -128,8 +128,8 @@ fun UserDataScreen(
             .background(
                 brush = Brush.linearGradient(
                     listOf(
-                        Color(0xFF5608A4),
-                        Color(0xFFBA88FF)
+                        Color(0xFF82E04C),
+                        Color(0xFF669126)
                     )
                 )
             )
@@ -181,8 +181,8 @@ fun UserDataScreen(
                                     2.dp,
                                     brush = Brush.linearGradient(
                                         listOf(
-                                            Color(0xFF5608A4),
-                                            Color(0xFFBA88FF)
+                                            Color(0xFF82E04C),
+                                            Color(0xFF669126)
                                         )
                                     )),
                                 elevation = CardDefaults.elevatedCardElevation(5.dp)
@@ -191,7 +191,7 @@ fun UserDataScreen(
                                     painter = painterResource(id = R.drawable.profile),
                                     contentDescription = stringResource(R.string.logo_description),
                                     modifier = Modifier
-                                        .padding(top = 32.dp)
+                                        .padding(top = 2.dp)
                                         .fillMaxSize()
 
                                 )
@@ -205,8 +205,8 @@ fun UserDataScreen(
                                     1.dp,
                                     brush = Brush.linearGradient(
                                         listOf(
-                                            Color(0xFF5608A4),
-                                            Color(0xFFBA88FF)
+                                            Color(0xFF82E04C),
+                                            Color(0xFF669126)
                                         )
                                     )),
                                 elevation = ButtonDefaults.buttonElevation(5.dp),
@@ -230,8 +230,8 @@ fun UserDataScreen(
                                     2.dp,
                                     brush = Brush.linearGradient(
                                         listOf(
-                                            Color(0xFF5608A4),
-                                            Color(0xFFBA88FF)
+                                            Color(0xFF82E04C),
+                                            Color(0xFF669126)
                                         )
                                     )),
                                 elevation = CardDefaults.elevatedCardElevation(5.dp)
@@ -240,7 +240,7 @@ fun UserDataScreen(
                                     painter = painterResource(id = R.drawable.woman),
                                     contentDescription = stringResource(R.string.logo_description),
                                     modifier = Modifier
-                                        .padding(top = 32.dp)
+                                        .padding(top = 2.dp)
                                         .fillMaxSize()
                                 )
                             }
@@ -253,8 +253,8 @@ fun UserDataScreen(
                                     1.dp,
                                     brush = Brush.linearGradient(
                                         listOf(
-                                            Color(0xFF5608A4),
-                                            Color(0xFFBA88FF)
+                                            Color(0xFF82E04C),
+                                            Color(0xFF669126)
                                         )
                                     )),
                                 elevation = ButtonDefaults.buttonElevation(5.dp),
@@ -288,7 +288,7 @@ fun UserDataScreen(
                                 Icon(
                                     imageVector = Icons.Default.Numbers,
                                     contentDescription = "",
-                                    tint = Color(0xFF5608A4)
+                                    tint = Color(0xFF669126)
                                 )
                             },
                             keyboardOptions = KeyboardOptions(
@@ -296,8 +296,8 @@ fun UserDataScreen(
                                 imeAction = ImeAction.Next
                             ),
                             colors = OutlinedTextFieldDefaults.colors(
-                                unfocusedLabelColor = Color(0xFFBA88FF),
-                                cursorColor = Color(0xFFBA88FF)
+                                unfocusedLabelColor = Color(0xFF0D1708),
+                                cursorColor = Color(0xFF0D1708)
                             ),
                             isError = isErrorStateInputAge.value,
                             supportingText = {
@@ -325,7 +325,7 @@ fun UserDataScreen(
                                 Icon(
                                     imageVector = Icons.Default.Balance,
                                     contentDescription = "",
-                                    tint = Color(0xFF5608A4)
+                                    tint = Color(0xFF669126)
                                 )
                             },
                             keyboardOptions = KeyboardOptions(
@@ -333,8 +333,8 @@ fun UserDataScreen(
                                 imeAction = ImeAction.Next
                             ),
                             colors = OutlinedTextFieldDefaults.colors(
-                                unfocusedLabelColor = Color(0xFFBA88FF),
-                                cursorColor = Color(0xFFBA88FF)
+                                unfocusedLabelColor = Color(0xFF0D1708),
+                                cursorColor = Color(0xFF0D1708)
                             ),
                             isError = isErrorStateInputWeight.value,
                             supportingText = {
@@ -361,7 +361,7 @@ fun UserDataScreen(
                                 Icon(
                                     imageVector = Icons.Default.Height,
                                     contentDescription = "",
-                                    tint = Color(0xFF5608A4)
+                                    tint = Color(0xFF669126)
                                 )
                             },
                             keyboardOptions = KeyboardOptions(
@@ -369,8 +369,8 @@ fun UserDataScreen(
                                 imeAction = ImeAction.Done
                             ),
                             colors = OutlinedTextFieldDefaults.colors(
-                                cursorColor = Color(0xFFBA88FF),
-                                unfocusedLabelColor = Color(0xFFBA88FF)
+                                cursorColor = Color(0xFF365724),
+                                unfocusedLabelColor = Color(0xFF234113)
                             ),
                             isError = isErrorStateInputHeight.value,
                             supportingText = {
@@ -430,12 +430,12 @@ fun UserDataScreen(
                             1.dp,
                             brush = Brush.linearGradient(
                                 listOf(
-                                    Color(0xFF5608A4),
-                                    Color(0xFFBA88FF)
+                                    Color(0xFF669126),
+                                    Color(0xFF82E04C)
                                 )
                             )),
                         elevation = ButtonDefaults.buttonElevation(5.dp),
-                        colors = ButtonDefaults.buttonColors(Color(0xFF5608A4)),
+                        colors = ButtonDefaults.buttonColors(Color(0xFF669126)),
                         shape = RoundedCornerShape(10.dp)
                     )  {
                         Text(

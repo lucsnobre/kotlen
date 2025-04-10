@@ -77,8 +77,8 @@ fun BMIResultScreen(
             .background(
                 brush = Brush.linearGradient(
                     listOf(
-                        Color(0xFF5608A4),
-                        Color(0xFFBA88FF)
+                        Color(0xFF82E04C),
+                        Color(0xFF669126)
                     )
                 )
             )
@@ -157,7 +157,7 @@ fun BMIResultScreen(
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .height(90.dp),
-                            colors = CardDefaults.cardColors(Color(0x9F863DEF)),
+                            colors = CardDefaults.cardColors(Color(0x9FA7A0AF)),
                             shape = RoundedCornerShape(20.dp)
                         ){
                             Row (
@@ -230,38 +230,38 @@ fun BMIResultScreen(
                     BmiLevel(
                         markColor = colorResource(R.color.light_blue),
                         isFilled = isFilled(bmiResult.bmiStatus, BmiStatus.UNDERWEIGHT),
-                        text1 = stringResource(R.string.under_weight_table),
-                        text2 = "< ${numberFormat(18.5)}"
+                        textRight = stringResource(R.string.under_weight_table),
+                        textLeft = "< ${numberFormat(18.5)}"
                     )
                     BmiLevel(
                         markColor = colorResource(R.color.light_green),
                         isFilled = isFilled(bmiResult.bmiStatus, BmiStatus.NORMAL),
-                        text1 = stringResource(R.string.normal_weight_table),
-                        text2 = "${numberFormat(18.6)} - ${numberFormat(24.9)}"
+                        textRight = stringResource(R.string.normal_weight_table),
+                        textLeft = "${numberFormat(18.6)} - ${numberFormat(24.9)}"
                     )
                     BmiLevel(
                         markColor = colorResource(R.color.yellow),
                         isFilled = isFilled(bmiResult.bmiStatus, BmiStatus.OVERWEIGHT),
-                        text1 = stringResource(R.string.over_weigh_tablet),
-                        text2 = "${numberFormat(25.0)} - ${numberFormat(29.9)}"
+                        textRight = stringResource(R.string.over_weigh_tablet),
+                        textLeft = "${numberFormat(25.0)} - ${numberFormat(29.9)}"
                     )
                     BmiLevel(
                         markColor = colorResource(R.color.light_orange),
                         isFilled = isFilled(bmiResult.bmiStatus, BmiStatus.OBESITY1),
-                        text1 = stringResource(R.string.class1_weight_table),
-                        text2 = "${numberFormat(30.0)} - ${numberFormat(34.9)}"
+                        textRight = stringResource(R.string.class1_weight_table),
+                        textLeft = "${numberFormat(30.0)} - ${numberFormat(34.9)}"
                     )
                     BmiLevel(
                         markColor = colorResource(R.color.dark_orange),
                         isFilled = isFilled(bmiResult.bmiStatus, BmiStatus.OBESITY2),
-                        text1 = stringResource(R.string.class2_weight_table),
-                        text2 = "${numberFormat(35.5)} - ${numberFormat(40.0)}"
+                        textRight = stringResource(R.string.class2_weight_table),
+                        textLeft = "${numberFormat(35.5)} - ${numberFormat(40.0)}"
                     )
                     BmiLevel(
                         markColor = colorResource(R.color.red),
                         isFilled = isFilled(bmiResult.bmiStatus, BmiStatus.OBESITY3),
-                        text1 = stringResource(R.string.class3_weight_table),
-                        text2 = "> ${numberFormat(40.0)}"
+                        textRight = stringResource(R.string.class3_weight_table),
+                        textLeft = "> ${numberFormat(40.0)}"
                     )
 
                     HorizontalDivider()
@@ -279,12 +279,12 @@ fun BMIResultScreen(
                             2.dp,
                             brush = Brush.linearGradient(
                                 listOf(
-                                    Color(0xFF5608A4),
-                                    Color(0xFFBA88FF)
+                                    Color(0xFF9DE134),
+                                    Color(0xFF9DE134)
                                 )
                             )),
                         elevation = ButtonDefaults.buttonElevation(5.dp),
-                        colors = ButtonDefaults.buttonColors(Color(0xFF5608A4)),
+                        colors = ButtonDefaults.buttonColors(Color(0xFF9DE134)),
                         shape = RoundedCornerShape(10.dp)
                     ){
                         Text(
